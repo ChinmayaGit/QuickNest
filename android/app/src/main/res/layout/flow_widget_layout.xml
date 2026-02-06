@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="@drawable/flow_widget_background">
+
+    <TextView
+        android:id="@+id/widget_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/flow_widget_title"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#E0E0E0"
+        android:layout_marginBottom="8dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="4dp">
+            <TextView
+                android:id="@+id/widget_battery_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Battery"
+                android:textSize="11sp"
+                android:textColor="#B0B0B0" />
+            <TextView
+                android:id="@+id/widget_battery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--%"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#4DD0E1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="4dp">
+            <TextView
+                android:id="@+id/widget_volume_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Volume"
+                android:textSize="11sp"
+                android:textColor="#B0B0B0" />
+            <TextView
+                android:id="@+id/widget_volume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--%"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#81C784" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="4dp">
+            <TextView
+                android:id="@+id/widget_brightness_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brightness"
+                android:textSize="11sp"
+                android:textColor="#B0B0B0" />
+            <TextView
+                android:id="@+id/widget_brightness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--%"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#FFD54F" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="4dp">
+            <TextView
+                android:id="@+id/widget_flash_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Flash"
+                android:textSize="11sp"
+                android:textColor="#B0B0B0" />
+            <TextView
+                android:id="@+id/widget_flash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Off"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#B0B0B0" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

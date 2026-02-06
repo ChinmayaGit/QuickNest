@@ -1,0 +1,243 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <application
+        android:label="myflowidgets"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:taskAffinity=""
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            <!-- Specifies an Android theme to apply to this Activity as soon as
+                 the Android process has started. This theme is visible to the user
+                 while the Flutter UI initializes. After that, this theme continues
+                 to determine the Window background behind the Flutter UI. -->
+            <meta-data
+              android:name="io.flutter.embedding.android.NormalTheme"
+              android:resource="@style/NormalTheme"
+              />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".BrightnessSliderActivity"
+            android:exported="true"
+            android:theme="@style/BrightnessSliderTheme"
+            android:excludeFromRecents="true"
+            android:taskAffinity="" />
+        <activity
+            android:name=".VolumeSliderActivity"
+            android:exported="true"
+            android:theme="@style/BrightnessSliderTheme"
+            android:excludeFromRecents="true"
+            android:taskAffinity="" />
+        <activity
+            android:name=".FullscreenActivity"
+            android:exported="true"
+            android:theme="@style/FullscreenTheme"
+            android:excludeFromRecents="true"
+            android:taskAffinity="" />
+        <receiver
+            android:name=".FlashToggleReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.chinmaya.myflowidgets.TOGGLE_FLASH" />
+            </intent-filter>
+        </receiver>
+        <!-- Don't delete the meta-data below.
+             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+
+        <!-- Home screen widgets: one per control -->
+        <receiver android:name=".VolumeWidgetProvider" android:exported="true" android:label="@string/widget_volume">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_volume_info" />
+        </receiver>
+        <receiver android:name=".BrightnessWidgetProvider" android:exported="true" android:label="@string/widget_brightness">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_brightness_info" />
+        </receiver>
+        <receiver android:name=".BatteryWidgetProvider" android:exported="true" android:label="@string/widget_battery">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_battery_info" />
+        </receiver>
+        <receiver android:name=".FlashWidgetProvider" android:exported="true" android:label="@string/widget_flash">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_flash_info" />
+        </receiver>
+        <receiver android:name=".NotificationWidgetProvider" android:exported="true" android:label="@string/widget_notification">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_notification_info" />
+        </receiver>
+        <receiver android:name=".LockWidgetProvider" android:exported="true" android:label="@string/widget_lock">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_lock_info" />
+        </receiver>
+        <receiver android:name=".WifiWidgetProvider" android:exported="true" android:label="@string/widget_wifi">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_wifi_info" />
+        </receiver>
+        <receiver android:name=".BluetoothWidgetProvider" android:exported="true" android:label="@string/widget_bluetooth">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_bluetooth_info" />
+        </receiver>
+        <receiver android:name=".DndWidgetProvider" android:exported="true" android:label="@string/widget_dnd">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_dnd_info" />
+        </receiver>
+        <receiver android:name=".DataWidgetProvider" android:exported="true" android:label="@string/widget_data">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_data_info" />
+        </receiver>
+        <receiver android:name=".FullscreenWidgetProvider" android:exported="true" android:label="@string/widget_fullscreen">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_fullscreen_info" />
+        </receiver>
+        <receiver android:name=".NetSpeedWidgetProvider" android:exported="true" android:label="@string/widget_netspeed">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_netspeed_info" />
+        </receiver>
+
+        <!-- Quick Settings Tiles (add via Edit in notification shade) -->
+        <service
+            android:name=".VolumeTileService"
+            android:exported="true"
+            android:icon="@drawable/widget_icon_volume"
+            android:label="@string/widget_volume"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".BrightnessTileService"
+            android:exported="true"
+            android:icon="@drawable/widget_icon_brightness"
+            android:label="@string/widget_brightness"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".BatteryTileService"
+            android:exported="true"
+            android:icon="@drawable/widget_icon_battery"
+            android:label="@string/widget_battery"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".FlashTileService"
+            android:exported="true"
+            android:icon="@drawable/widget_icon_flash"
+            android:label="@string/widget_flash"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".NotificationTileService"
+            android:exported="true"
+            android:icon="@drawable/widget_icon_notification"
+            android:label="@string/widget_notification"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".LockTileService"
+            android:exported="true"
+            android:icon="@drawable/widget_icon_lock"
+            android:label="@string/widget_lock"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".WifiTileService"
+            android:exported="true"
+            android:icon="@drawable/widget_icon_wifi"
+            android:label="@string/widget_wifi"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".BluetoothTileService"
+            android:exported="true"
+            android:icon="@drawable/widget_icon_bluetooth"
+            android:label="@string/widget_bluetooth"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".DndTileService"
+            android:exported="true"
+            android:icon="@drawable/widget_icon_dnd"
+            android:label="@string/widget_dnd"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".DataTileService"
+            android:exported="true"
+            android:icon="@drawable/widget_icon_data"
+            android:label="@string/widget_data"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".FullscreenTileService"
+            android:exported="true"
+            android:icon="@drawable/widget_icon_fullscreen"
+            android:label="@string/widget_fullscreen"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".NetSpeedTileService"
+            android:exported="true"
+            android:icon="@drawable/widget_icon_netspeed"
+            android:label="@string/widget_netspeed"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+    </application>
+    <!-- Required to query activities that can process text, see:
+         https://developer.android.com/training/package-visibility and
+         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+
+         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.PROCESS_TEXT"/>
+            <data android:mimeType="text/plain"/>
+        </intent>
+    </queries>
+</manifest>

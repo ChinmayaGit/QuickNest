@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="flow_widget_title">Flow Widgets</string>
+    <string name="flow_widget_description">Quick settings: battery, volume, brightness, flash</string>
+    <string name="widget_volume">Volume</string>
+    <string name="widget_brightness">Brightness</string>
+    <string name="widget_battery">Battery</string>
+    <string name="widget_flash">Flash</string>
+    <string name="widget_notification">Notifications</string>
+    <string name="widget_lock">Screen lock</string>
+    <string name="widget_wifi">Wi‑Fi</string>
+    <string name="widget_bluetooth">Bluetooth</string>
+    <string name="widget_dnd">Do not disturb</string>
+    <string name="widget_data">Network data</string>
+    <string name="widget_fullscreen">Force full screen</string>
+    <string name="fullscreen_title">Full screen</string>
+    <string name="fullscreen_tap_exit">Tap or back to exit</string>
+    <string name="widget_netspeed">Net speed</string>
+</resources>
